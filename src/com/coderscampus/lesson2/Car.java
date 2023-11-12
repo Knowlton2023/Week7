@@ -1,6 +1,6 @@
 package com.coderscampus.lesson2;
 
-public class Car {
+public class Car implements Product{
 	private Electronics electronics;
 	private Body body;
 	private Frame frame;
@@ -22,6 +22,10 @@ public class Car {
 	}
 	public void setFrame(Frame frame) {
 		this.frame = frame;
+	}
+	@Override
+	public Integer getPrice() {
+		return 10000;
 	}
 	
 	
