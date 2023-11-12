@@ -22,6 +22,17 @@ public class SortingApplication {
 			System.out.println(name);
 		}
 
+		Person[] people = new Person[5];
+		people[0] = new Person("Josh Allen", 72);
+		people[1] = new Person("Trevor Page", 70);
+		people[2] = new Person("Elon Musk", 74);
+		people[3] = new Person("Jordan Bellfast", 71);
+		people[4] = new Person("Jane Doe", 70);
+		Arrays.sort(people);
+		System.out.println("----");
+		for (Person person : people) {
+			System.out.println(person.getName());
+		}
 		
 	}
 
