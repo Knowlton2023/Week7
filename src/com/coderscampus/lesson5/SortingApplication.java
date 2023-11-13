@@ -1,6 +1,7 @@
 package com.coderscampus.lesson5;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 public class SortingApplication {
 
@@ -28,12 +29,37 @@ public class SortingApplication {
 		people[2] = new Person("Elon Musk", 74);
 		people[3] = new Person("Jordan Bellfast", 71);
 		people[4] = new Person("Jane Doe", 70);
+
+		
 		Arrays.sort(people);
 		System.out.println("----");
 		for (Person person : people) {
 			System.out.println(person.getName());
 		}
 		
+		
+		System.out.println("----");
+		Arrays.sort(people, new PersonHeightComparator());
+		for (Person person : people) {
+			System.out.println(person.getName() + " is " + person.getHeight() + " inches tall.");
+		}
+		
+		
+		System.out.println("----");
+		Arrays.sort(people, new Comparator<Person>(){
+			@Override
+			public int compare(Person person1, Person person2) {
+				return person2.getHeight().compareTo(person1.getHeight());
+			}
+		});
+
+		for (Person person : people) {
+			System.out.println(person.getName() + " is " + person.getHeight() + " inches tall.");
+		}
+		
+		
+	
+	
 	}
 
 }
